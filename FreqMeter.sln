@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FreqMeter", "Test\FreqMeter.vbproj", "{6CE8CD2B-97A7-4488-BE24-BD64920C608F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CE8CD2B-97A7-4488-BE24-BD64920C608F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CE8CD2B-97A7-4488-BE24-BD64920C608F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CE8CD2B-97A7-4488-BE24-BD64920C608F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CE8CD2B-97A7-4488-BE24-BD64920C608F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99DE99CC-7DDD-4BDD-8030-8C467DF3E6EE}
+	EndGlobalSection
+EndGlobal
