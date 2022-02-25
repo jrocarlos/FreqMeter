@@ -40,11 +40,19 @@ Partial Class Form1
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.TextBoxMedia = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBoxDesvio = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBoxMedidas = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -125,7 +133,7 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.TextBoxFab)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 59)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(298, 341)
+        Me.GroupBox2.Size = New System.Drawing.Size(298, 188)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Equipamento sob Calibração"
@@ -134,7 +142,7 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(25, 154)
+        Me.Label4.Location = New System.Drawing.Point(25, 129)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(116, 20)
         Me.Label4.TabIndex = 5
@@ -144,7 +152,7 @@ Partial Class Form1
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(25, 102)
+        Me.Label5.Location = New System.Drawing.Point(25, 77)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(59, 20)
         Me.Label5.TabIndex = 5
@@ -154,7 +162,7 @@ Partial Class Form1
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(24, 50)
+        Me.Label6.Location = New System.Drawing.Point(24, 25)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(75, 20)
         Me.Label6.TabIndex = 4
@@ -162,8 +170,8 @@ Partial Class Form1
         '
         'TextBoxMod
         '
-        Me.TextBoxMod.BackColor = System.Drawing.SystemColors.Menu
-        Me.TextBoxMod.Location = New System.Drawing.Point(29, 125)
+        Me.TextBoxMod.BackColor = System.Drawing.SystemColors.Window
+        Me.TextBoxMod.Location = New System.Drawing.Point(28, 100)
         Me.TextBoxMod.Name = "TextBoxMod"
         Me.TextBoxMod.ReadOnly = True
         Me.TextBoxMod.Size = New System.Drawing.Size(154, 26)
@@ -171,8 +179,8 @@ Partial Class Form1
         '
         'TextBoxNS
         '
-        Me.TextBoxNS.BackColor = System.Drawing.SystemColors.Menu
-        Me.TextBoxNS.Location = New System.Drawing.Point(28, 177)
+        Me.TextBoxNS.BackColor = System.Drawing.SystemColors.Window
+        Me.TextBoxNS.Location = New System.Drawing.Point(28, 152)
         Me.TextBoxNS.Name = "TextBoxNS"
         Me.TextBoxNS.ReadOnly = True
         Me.TextBoxNS.Size = New System.Drawing.Size(155, 26)
@@ -180,8 +188,8 @@ Partial Class Form1
         '
         'TextBoxFab
         '
-        Me.TextBoxFab.BackColor = System.Drawing.SystemColors.Menu
-        Me.TextBoxFab.Location = New System.Drawing.Point(28, 73)
+        Me.TextBoxFab.BackColor = System.Drawing.SystemColors.Window
+        Me.TextBoxFab.Location = New System.Drawing.Point(28, 48)
         Me.TextBoxFab.Name = "TextBoxFab"
         Me.TextBoxFab.ReadOnly = True
         Me.TextBoxFab.Size = New System.Drawing.Size(155, 26)
@@ -222,12 +230,80 @@ Partial Class Form1
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Calibration"
         '
+        'GroupBox5
+        '
+        Me.GroupBox5.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.GroupBox5.Controls.Add(Me.Label7)
+        Me.GroupBox5.Controls.Add(Me.TextBoxMedidas)
+        Me.GroupBox5.Controls.Add(Me.Label3)
+        Me.GroupBox5.Controls.Add(Me.TextBoxDesvio)
+        Me.GroupBox5.Controls.Add(Me.Label2)
+        Me.GroupBox5.Controls.Add(Me.TextBoxMedia)
+        Me.GroupBox5.Location = New System.Drawing.Point(12, 253)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(298, 147)
+        Me.GroupBox5.TabIndex = 10
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Resultados"
+        '
+        'TextBoxMedia
+        '
+        Me.TextBoxMedia.Location = New System.Drawing.Point(29, 105)
+        Me.TextBoxMedia.Name = "TextBoxMedia"
+        Me.TextBoxMedia.Size = New System.Drawing.Size(177, 26)
+        Me.TextBoxMedia.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(25, 82)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(50, 20)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Média:"
+        '
+        'TextBoxDesvio
+        '
+        Me.TextBoxDesvio.Location = New System.Drawing.Point(29, 46)
+        Me.TextBoxDesvio.Name = "TextBoxDesvio"
+        Me.TextBoxDesvio.Size = New System.Drawing.Size(96, 26)
+        Me.TextBoxDesvio.TabIndex = 7
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(25, 22)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(102, 20)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Desvio Padrão:"
+        '
+        'TextBoxMedidas
+        '
+        Me.TextBoxMedidas.Location = New System.Drawing.Point(161, 46)
+        Me.TextBoxMedidas.Name = "TextBoxMedidas"
+        Me.TextBoxMedidas.Size = New System.Drawing.Size(96, 26)
+        Me.TextBoxMedidas.TabIndex = 9
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(157, 23)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(136, 20)
+        Me.Label7.TabIndex = 10
+        Me.Label7.Text = "Número de Medidas:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ClientSize = New System.Drawing.Size(681, 506)
+        Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
@@ -246,6 +322,8 @@ Partial Class Form1
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -267,4 +345,11 @@ Partial Class Form1
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TextBoxMedia As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TextBoxDesvio As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TextBoxMedidas As TextBox
 End Class

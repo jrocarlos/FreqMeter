@@ -8,7 +8,7 @@
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As _
      System.EventArgs) Handles Button1.Click
 
-        Dim idn, TEXTO_GPIB, texto2, End_EUT_TXT, ERRO_ENDEREÇO, fab, comprimento As String
+        Dim idn, TEXTO_GPIB, texto2, End_EUT_TXT, ERRO_ENDEREÇO As String
         Dim resposta_gpib, CONTADOR_ERRO, CONTA_VOLTA1, i As Integer
         Dim nametxt As String = "Padrao_txt" & i.ToString
 
@@ -105,10 +105,19 @@ fim:
 
     End Sub
 
+    Private Sub TextBoxMod_TextChanged(sender As Object, e As EventArgs) Handles TextBoxMod.TextChanged
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim PONTO As Integer
+        Dim PONTO, LINHA, CELL, num As Integer
+        Dim avg As Double
         Dim med, End_EUT_TXT As String
-        Dim date1 As Date = #3/1/2008 7:00AM#
+        Dim date1 As DateTime = #02/25/2022 03:00PM#
 
 
         'With DataGridView1
@@ -119,22 +128,45 @@ fim:
 
         End_EUT_TXT = "GPIB0::" & End_EUT & "::INSTR"
         instrument.IO = ioMgr.Open(End_EUT_TXT)
+
+        instrument.WriteString("*RST")
+        instrument.WriteString("INP1:COUP DC")
+        instrument.WriteString("INP1:IMP 50")
         instrument.WriteString("INIT")
+        LINHA = 0
+        CELL = 0
         Do
             PONTO = PONTO + 1
 
             System.Threading.Thread.Sleep(1000)
             instrument.WriteString("READ?")
             med = instrument.ReadString()
-            'Me.DataGridView1.Columns(data)
-            ' Me.DataGridView1.Rows.Add(date1)
-            Me.DataGridView1.Rows.Add(med)
+
+            'Me.DataGridView1.Rows(LINHA).Cells(CELL).Value = date1
+            Me.DataGridView1.Rows.Add(date1, med)
+            'LINHA = LINHA + 1
+            'CELL = CELL + 1
+            'Me.DataGridView1.Rows(LINHA).Cells(CELL).Value = med
+            'Me.DataGridView1.Rows.Add(med)
+
 
             Me.DataGridView1.AutoResizeColumns()
 
         Loop Until PONTO >= 5
         instrument.IO.Close()
 
+        num = DataGridView1.RowCount.ToString - 1
+        TextBoxMedidas.Text = num
+
+        For i = 0 To num
+            avg = avg + Convert.ToDouble(DataGridView1.Rows(i).Cells(1).Value)
+        Next
+
+        'avg = avg / num
+        TextBoxMedia.Text = avg.ToString
+        TextBoxMedia.Text = TextBoxMedia.Text / TextBoxMedidas.Text
+        avg = TextBoxMedia.Text
+        'TextBoxMedia.Text = med / PONTO
 
 
         ' ioMgr = New Ivi.Visa.Interop.ResourceManager
