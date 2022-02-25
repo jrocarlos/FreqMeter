@@ -115,7 +115,7 @@ fim:
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim PONTO, LINHA, CELL, num As Integer
-        Dim avg As Double
+        Dim avg, L As Double
         Dim med, End_EUT_TXT As String
         Dim date1 As DateTime = #02/25/2022 03:00PM#
 
@@ -158,13 +158,14 @@ fim:
         num = DataGridView1.RowCount.ToString - 1
         TextBoxMedidas.Text = num
 
-        For i = 0 To num
-            avg = avg + Convert.ToDouble(DataGridView1.Rows(i).Cells(1).Value)
+        For i = 0 To num - 1
+            avg = avg + DataGridView1.Rows(i).Cells(1).Value
         Next
 
-        'avg = avg / num
-        TextBoxMedia.Text = avg.ToString
-        TextBoxMedia.Text = TextBoxMedia.Text / TextBoxMedidas.Text
+        TextBoxMedia.Text = avg / num
+        L = DataGridView1.Rows(1).Cells(1).Value
+        TextBoxDesvio.Text = L
+        'TextBoxMedia.Text = TextBoxMedia.Text / TextBoxMedidas.Text
         avg = TextBoxMedia.Text
         'TextBoxMedia.Text = med / PONTO
 
