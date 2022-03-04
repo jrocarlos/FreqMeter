@@ -41,12 +41,12 @@ Partial Class Form1
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.TextBoxMedia = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBoxDesvio = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBoxMedidas = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBoxMedidas = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBoxDesvio = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBoxMedia = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -246,29 +246,22 @@ Partial Class Form1
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Resultados"
         '
-        'TextBoxMedia
+        'Label7
         '
-        Me.TextBoxMedia.Location = New System.Drawing.Point(29, 105)
-        Me.TextBoxMedia.Name = "TextBoxMedia"
-        Me.TextBoxMedia.Size = New System.Drawing.Size(177, 26)
-        Me.TextBoxMedia.TabIndex = 0
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(157, 23)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(136, 20)
+        Me.Label7.TabIndex = 10
+        Me.Label7.Text = "Número de Medidas:"
         '
-        'Label2
+        'TextBoxMedidas
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(25, 82)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(50, 20)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Média:"
-        '
-        'TextBoxDesvio
-        '
-        Me.TextBoxDesvio.Location = New System.Drawing.Point(29, 46)
-        Me.TextBoxDesvio.Name = "TextBoxDesvio"
-        Me.TextBoxDesvio.Size = New System.Drawing.Size(96, 26)
-        Me.TextBoxDesvio.TabIndex = 7
+        Me.TextBoxMedidas.Location = New System.Drawing.Point(161, 46)
+        Me.TextBoxMedidas.Name = "TextBoxMedidas"
+        Me.TextBoxMedidas.Size = New System.Drawing.Size(120, 26)
+        Me.TextBoxMedidas.TabIndex = 9
         '
         'Label3
         '
@@ -280,22 +273,29 @@ Partial Class Form1
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Desvio Padrão:"
         '
-        'TextBoxMedidas
+        'TextBoxDesvio
         '
-        Me.TextBoxMedidas.Location = New System.Drawing.Point(161, 46)
-        Me.TextBoxMedidas.Name = "TextBoxMedidas"
-        Me.TextBoxMedidas.Size = New System.Drawing.Size(96, 26)
-        Me.TextBoxMedidas.TabIndex = 9
+        Me.TextBoxDesvio.Location = New System.Drawing.Point(29, 46)
+        Me.TextBoxDesvio.Name = "TextBoxDesvio"
+        Me.TextBoxDesvio.Size = New System.Drawing.Size(112, 26)
+        Me.TextBoxDesvio.TabIndex = 7
         '
-        'Label7
+        'Label2
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(157, 23)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(136, 20)
-        Me.Label7.TabIndex = 10
-        Me.Label7.Text = "Número de Medidas:"
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(25, 82)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(50, 20)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Média:"
+        '
+        'TextBoxMedia
+        '
+        Me.TextBoxMedia.Location = New System.Drawing.Point(29, 105)
+        Me.TextBoxMedia.Name = "TextBoxMedia"
+        Me.TextBoxMedia.Size = New System.Drawing.Size(177, 26)
+        Me.TextBoxMedia.TabIndex = 0
         '
         'Form1
         '

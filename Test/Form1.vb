@@ -115,15 +115,13 @@ fim:
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim PONTO, LINHA, CELL, num As Integer
-        Dim avg, L As Double
+        Dim avg, std As Double
         Dim med, End_EUT_TXT As String
         Dim date1 As DateTime = #02/25/2022 03:00PM#
-
 
         'With DataGridView1
         'SelectionMode = DataGridViewSelectionMode.FullRowSelect
         '.Columns.Add()
-
         ' End With
 
         End_EUT_TXT = "GPIB0::" & End_EUT & "::INSTR"
@@ -141,6 +139,10 @@ fim:
             System.Threading.Thread.Sleep(1000)
             instrument.WriteString("READ?")
             med = instrument.ReadString()
+            med = Replace(med, ".", ",")
+            If med > 1000000 Then
+                med = med / 1000000
+            End If
 
             'Me.DataGridView1.Rows(LINHA).Cells(CELL).Value = date1
             Me.DataGridView1.Rows.Add(date1, med)
@@ -163,12 +165,13 @@ fim:
         Next
 
         TextBoxMedia.Text = avg / num
-        L = DataGridView1.Rows(1).Cells(1).Value
-        TextBoxDesvio.Text = L
-        'TextBoxMedia.Text = TextBoxMedia.Text / TextBoxMedidas.Text
         avg = TextBoxMedia.Text
+        For i = 0 To num - 1
+            std = ((avg - DataGridView1.Rows(i).Cells(1).Value) ^ 2) / (num)
+        Next
+        std = Math.Sqrt(std)
+        TextBoxDesvio.Text = std
         'TextBoxMedia.Text = med / PONTO
-
 
         ' ioMgr = New Ivi.Visa.Interop.ResourceManager
         'instrument = New Ivi.Visa.Interop.FormattedIO488
