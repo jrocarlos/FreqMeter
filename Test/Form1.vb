@@ -115,7 +115,7 @@ fim:
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim PONTO, LINHA, CELL, num As Integer
-        Dim avg, std As Double
+        Dim avg, std, std2 As Double
         Dim med, End_EUT_TXT As String
         Dim date1 As DateTime = #02/25/2022 03:00PM#
 
@@ -157,18 +157,23 @@ fim:
         Loop Until PONTO >= 5
         instrument.IO.Close()
 
+        'número de medida
         num = DataGridView1.RowCount.ToString - 1
         TextBoxMedidas.Text = num
 
+        'média
         For i = 0 To num - 1
             avg = avg + DataGridView1.Rows(i).Cells(1).Value
         Next
-
         TextBoxMedia.Text = avg / num
         avg = TextBoxMedia.Text
+
+        'desvio padrão
         For i = 0 To num - 1
-            std = ((avg - DataGridView1.Rows(i).Cells(1).Value) ^ 2) / (num)
+            std2 = ((DataGridView1.Rows(i).Cells(1).Value - avg) ^ 2)
+            std = std + std2
         Next
+        std = std / (num - 1)
         std = Math.Sqrt(std)
         TextBoxDesvio.Text = std
         'TextBoxMedia.Text = med / PONTO
