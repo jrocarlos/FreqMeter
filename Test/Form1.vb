@@ -151,7 +151,6 @@ fim:
             'Me.DataGridView1.Rows(LINHA).Cells(CELL).Value = med
             'Me.DataGridView1.Rows.Add(med)
 
-
             Me.DataGridView1.AutoResizeColumns()
 
         Loop Until PONTO >= 5
