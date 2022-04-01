@@ -65,7 +65,6 @@ VOLTA1:
         TextBoxMod.Text = palavras(1)
         TextBoxNS.Text = palavras(2)
 
-
 FIM2:
 
     End Sub
@@ -114,7 +113,7 @@ fim:
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim PONTO, LINHA, CELL, num As Integer
+        Dim PONTO, LINHA, CELL, num, NMED As Integer
         Dim avg, std, std2 As Double
         Dim med, End_EUT_TXT As String
         Dim date1 As DateTime = #02/25/2022 03:00PM#
@@ -133,6 +132,15 @@ fim:
         instrument.WriteString("INIT")
         LINHA = 0
         CELL = 0
+
+        NMED = InputBox("INSIRA O NÚMERO DE MEDIDAS:", "NÚMERO DE MEDIDAS")
+        If IsNumeric(NMED) = False Then
+            MsgBox("INSIRA UM VALOR NUMÉRICO", vbOKOnly, "ERRO")
+        ElseIf NMED = 0 Then
+            MsgBox("INSIRA UM VALOR VÁLIDO", vbOKOnly, "ERRO")
+            GoTo FINAL
+        End If
+
         Do
             PONTO = PONTO + 1
 
@@ -153,7 +161,7 @@ fim:
 
             Me.DataGridView1.AutoResizeColumns()
 
-        Loop Until PONTO >= 5
+        Loop Until PONTO >= NMED
         instrument.IO.Close()
 
         'número de medida
@@ -188,6 +196,6 @@ fim:
         'TextBox1.Text = TEXTO_INFORMACAO
         ' instrument.IO.Close()
 
-
+FINAL:
     End Sub
 End Class
