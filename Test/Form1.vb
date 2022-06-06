@@ -175,12 +175,12 @@ fim:
         TextBoxMedia.Text = avg / num
         avg = TextBoxMedia.Text
 
-        'desvio padrão
+        'variância de allan
         For i = 0 To num - 1
             std2 = ((DataGridView1.Rows(i).Cells(1).Value - avg) ^ 2)
             std = std + std2
         Next
-        std = std / (num - 1)
+        std = std / (2 * (num - 1))
         std = Math.Sqrt(std)
         TextBoxDesvio.Text = std
         'TextBoxMedia.Text = med / PONTO
