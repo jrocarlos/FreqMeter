@@ -50,14 +50,17 @@ VOLTA1:
 
         'Call endereco(End_EUT_TXT)
 
+
+
+        instrument.IO = ioMgr.Open(End_EUT_TXT)
+        instrument.WriteString("*IDN?")
+
         If ERRO_ENDEREÇO = 1 Then
             TEXTO_GPIB = "HOUVE UM ERRO" & Chr(13) & "VERIFIQUE O SETUP E EXECUTE O SOFTWARE NOVAMENTE"
             MsgBox(TEXTO_GPIB, vbOKOnly, "ERRO DE SETUP")
             GoTo FIM2
         End If
 
-        instrument.IO = ioMgr.Open(End_EUT_TXT)
-        instrument.WriteString("*IDN?")
         idn = instrument.ReadString()
 
         Dim palavras As String() = idn.Split(",")
